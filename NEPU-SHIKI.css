@@ -15,6 +15,8 @@
 @import url(https://shiki-theme.web.app/import/profile-update.1.1.css);
 /* тесты */
 @import url(https://shiki-theme.web.app/import/test/b-shiki_editor-smileys.css);
+/* Компактное отображения блоков «Избранное» и «Достижения» в профиле */
+@import url("https://shiki-theme.web.app/import/profile-achievements--small.css");
 
 /* Настройки переменных темы */
 @media{:root {
@@ -1710,20 +1712,21 @@ screen and (max-width: 599px) and (min-height: 720px)
     bottom: 0px;
 }
 .p-achievements-index .c-franchises .b-badge[data-progress="100"]::after {
+    position: absolute;
     content: '★';
     font-size: 26px;
     color: #bbfeff;
     text-shadow: none;
-    background: linear-gradient(135deg, transparent calc(100% - 37px), #1d172b 0);
+    background: linear-gradient(405deg, transparent calc(100% - 37px), #1d172b 0);
     width: calc(100% - 10px) !important;
     height: calc(100% - 15px) !important;
     line-height: 20px !important;
     transition: 0.2s ease;
     display: flex;
-    align-items: flex-end;
     top: 0;
     justify-content: flex-end;
-    padding: 10px 6px 6px;
+    padding: 6px;
+    z-index: 1;
 }
 .p-achievements-global table.statistics td:first-child {
     color: #f6ebfe;
@@ -2206,45 +2209,40 @@ code.b-code_inline {
     display: inline-block;
 }
 /* Оформление постеров */
-[data-dynamic="cutted_covers"], .cc-8-g15, .c-works {
+.p-profiles-favorites .cc-favourites, .cc-8-g15, .cc-characters .cc.m0, .cc.cc-similar {
     display: flex;
     flex-wrap: wrap;
 }
-.p-animes-staff [data-dynamic="cutted_covers"] {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-}
-.p-profiles-show .cc-favourites, .cc-related-authors .cc, .b-clubs-menu [data-dynamic="cutted_covers"] {
+.p-profiles-show .cc-favourites, .cc-related-authors .cc, .b-clubs-menu {
     display: inherit;
 }
-[data-dynamic="cutted_covers"] .b-catalog_entry, .cc-8-g15 .b-catalog_entry, .c-works .b-catalog_entry {
+.b-catalog_entry, .cc-8-g15 .b-catalog_entry, .c-works .b-catalog_entry {
     border-radius: 3px;
     background: #221d3990;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
     transition: 0.16s cubic-bezier(0.4, 0, 0.6, 1);
 }
-[data-dynamic="cutted_covers"] .b-catalog_entry:hover, .cc-8-g15 .b-catalog_entry:hover, .c-works .b-catalog_entry:hover {
+.b-catalog_entry:hover, .cc-8-g15 .b-catalog_entry:hover, .c-works .b-catalog_entry:hover {
     background: #221d39b0;
     box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.16);
 }
-[data-dynamic="cutted_covers"] .b-catalog_entry:active, .cc-8-g15 .b-catalog_entry:active, .c-works .b-catalog_entry:active {
+.b-catalog_entry:active, .cc-8-g15 .b-catalog_entry:active, .c-works .b-catalog_entry:active {
     background: #221d39c0;
 }
-[data-dynamic="cutted_covers"] .b-catalog_entry .cover, .cc-8-g15 .b-catalog_entry .cover, .c-works .b-catalog_entry .cover {
+.b-catalog_entry .cover, .cc-8-g15 .b-catalog_entry .cover, .c-works .b-catalog_entry .cover {
     text-decoration: none !important;
 }
-[data-dynamic="cutted_covers"] .b-catalog_entry .title, [data-dynamic="cutted_covers"] .b-catalog_entry .title.left_aligned ~ .misc, [data-dynamic="cutted_covers"] .b-catalog_entry .misc.centered, .cc-8-g15 .b-catalog_entry .cover .title, .c-works .b-catalog_entry .title, .c-works .b-catalog_entry .misc.centered {
+.b-catalog_entry .title, .b-catalog_entry .title.left_aligned ~ .misc, .b-catalog_entry .misc.centered, .cc-8-g15 .b-catalog_entry .cover .title, .c-works .b-catalog_entry .title, .c-works .b-catalog_entry .misc.centered {
     padding: 5px 8px 0;
-    margin: 0;
+    margin: 0 !important;
     text-decoration: none !important;
 }
-[data-dynamic="cutted_covers"] .b-catalog_entry .title.left_aligned ~ .misc, [data-dynamic="cutted_covers"] .b-catalog_entry .misc.centered, .c-works .b-catalog_entry .misc.centered {
+.b-catalog_entry .title.left_aligned ~ .misc, .b-catalog_entry .misc.centered, .c-works .b-catalog_entry .misc.centered {
     padding: 0 8px 5px;
 }
-[data-dynamic="cutted_covers"] .b-catalog_entry .title.two_lined, .cc-8-g15 .b-catalog_entry .cover .title.two_lined {
+.b-catalog_entry .title.two_lined, .cc-8-g15 .b-catalog_entry .cover .title.two_lined {
     padding: 5px 8px;
-    max-height: 100%;
+    max-height: 100% !important;
 }
 /* Правка колонки ДРУЗЬЯ */
 @media(min-width: 960px) {
@@ -2752,6 +2750,27 @@ img.smiley {
 .p-profiles.x1000 .profile-content > .cc-2 .c-right .cc-2a {
     margin-bottom: 4.2rem !important;
 }
+.p-profiles .profile-content .cc-2 > .c-column {
+  margin-bottom: 14px;
+}  
+.p-profiles-show .achievements .header {
+  display: block !important;
+}
+.p-profiles .profile-content .cc-2 > .c-column:nth-child(3n) {
+  width: 100%;
+  margin-bottom: 0;
+}
+.p-profiles-show .achievements .header .size {
+  position: absolute;
+  left: 11rem;
+  top: 0;
+}
+.p-profiles .profile-content .cc-2 > .c-column:nth-child(4n) {
+  display: none;
+}
+.p-profiles .profile-content .c-right > .block:last-child {
+  padding: 2px 20px 25px;
+}  
 .p-profiles-show .achievements {
     width: initial;
     padding: 4px 20px 12px;
@@ -2763,6 +2782,12 @@ img.smiley {
     z-index: 1;
     margin-left: -1.5rem;
     margin-right: -1.5rem;
+}
+.p-profiles-show .b-achievement.is-badge[data-hint*="Кудере"] {
+  display: inherit !important;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 }
 /* Оформление сайта */
 #topics_index header.head, body:not(.p-profiles-show):not(.p-dialogs):not(.p-messages) header.head, .p-profiles-edit .l-page > div > header.head, .p-achievements-franchise .block.m0, .p-profiles-feed .block.m0, .p-profiles-comments .block.m0, .p-profiles-summaries .block.m0, .p-profiles-versions .block.m0, .p-clubs-index .b-clubs.searchable-collection, .p-clubs-index .b-clubs.b-search-results, .p-user_history-index .block:last-child, .l-content, .b-hot_topics-v2, .p-animes_collection-index .pagination, .p-recommendations-index .pagination, .p-animes_collection-index .pagination:last-child, .p-recommendations-index .pagination:last-child, #users_index .b-search-results, #collections_index .b-search-results, #pages_ongoings .m0, #pages_ongoings .m3, #pages_ongoings .b-topic:first-child, #collections_show .block:last-child, #contests_index .contests, .l-footer, .p-dashboards-show .block2, #userlist_comparer_show .b-collection_search .field, .p-achievements-index .block2, .p-achievements-global, #pages_about .cc-2a, #pages_about .cc, #pages_about .b-brief, #pages_about .b-brief ~ .subheadline, #pages_about .traffic-chart, #pages_about .b-topic:first-child, #contests_show header.head ~ .block, .p-comments .m10, .p-comments .cc-2, .p-messages .b-options-floated, .p-dialogs .b-options-floated, .p-comments .block > .b-comment, .p-comments .block ~ .block:last-child, body:not(.p-user_rates-index) .block.is-own-profile, .p-articles .block:last-child, .b-bb_codes-examples {
