@@ -1,0 +1,101 @@
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_1.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_2.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_3.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/main_code_4mob.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/prof_form_citrus.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/q01_alter_menu.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/q02_monocolor_citrus_list.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/q03_history_bookmarks.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/q04_mark_module_for_posters.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/q08_alter_sitemenu.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/cosmo-library/q10-04_quick-access-panel_0.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/cosmo-library/q10-05_slider_0.css");
+@import url("https://raw.githubusercontent.com/ed-main/ed-main.github.io/master/cssfiles/cosmo-library/q10-06_mega-slider_0.css");
+body:after {
+  background-image: url(https://sun9-77.userapi.com/EgCnLx2qzJcZvEkuwRD8ICiVtqTOuq5e9GUxqA/00fbvpUoVOA.jpg);
+}
+
+.l-footer:after {
+  content: "*Blue Way*";
+}
+
+@media screen and (min-width: 1px) {
+  html:root {
+    --white-color: 229, 253, 253;
+    --light-color: 168, 219, 224;
+    --dark-color: 61, 195, 210;
+    --bright-color: 126, 214, 241;
+    --dull-color: 87, 123, 132;
+    --input-color: 86, 107, 113;
+    --hover-bottoms-1: 12, 63, 93;
+    --buttoms-color: 32, 72, 99;
+    --hover-buttoms-2: 12, 138, 136;
+    --very-high-rating: 59, 172, 191;
+    --high-rating: 40, 129, 156;
+    --average-rating: 10, 70, 99;
+    --small-rating: 8, 29, 41;
+    --time-filled: 0, 78, 97;
+    --time-empty: 12, 26, 37;
+    --anime-inprocess: 69, 146, 76;
+    --anime-complete: 41, 107, 47;
+    --manga-inprocess: 189, 15, 86;
+    --manga-complete: 153, 0, 62;
+    --hover-color: 0, 183, 162;
+    --shadows-color: 108, 188, 208;
+    --block-color: 27, 52, 78;
+    --menu-back: 8, 17, 29;
+    --nick-cover: 0, 88, 90;
+    --popup-color: 17, 33, 50;
+    --hundred: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.anime, .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.anime, .p-profiles .profile-head .c-info .c-lists-info .b-stats_bar.manga, .x1000 > .l-page div .profile-head .c-info .c-lists-info .b-stats_bar.manga {
+    opacity: 1;
+  }
+  .b-stats_bar.anime .stat_name[data-type="watching,rewatching"]:hover {
+    border: 3px solid rgba(var(--hover-color), 1) !important;
+  }
+  .b-stats_bar.manga .stat_name[data-type="watching,rewatching"]:hover {
+    border: 3px solid rgba(var(--manga-complete), 1) !important;
+  }  
+  .b-stats_bar.anime .stat_name[data-type="completed"]:hover {
+    border: 3px solid rgba(var(--hover-color), 1) !important;
+  }
+  .b-stats_bar.manga .stat_name[data-type="completed"]:hover  {
+    border: 3px solid rgba(var(--manga-complete), 1) !important;
+  }  
+  .b-stats_bar.anime .compatibility a::before, .b-stats_bar.manga .compatibility a::before {
+    background: rgba(var(--hover-color), 0.5);
+    border: 3px solid rgba(var(--menu-back), .5);
+    color: rgb(224, 224, 224);
+  }
+  .b-stats_bar.manga .compatibility a::before {
+    background: rgba(var(--manga-complete), 0.5);
+  }  
+  .b-stats_bar.anime .compatibility a:hover::before, .b-stats_bar.manga .compatibility a:hover::before {
+    background: rgba(var(--hover-color), 1);
+    border: 3px solid rgba(var(--menu-back), 1);
+    color: rgb(234, 232, 232);
+  }
+  .b-stats_bar.manga .compatibility a:hover::before {
+    background: rgba(var(--manga-complete), 1);
+  }  
+  .b-stats_bar.anime a.title::before {
+    border: 3px solid rgba(var(--hover-color), 0.5);
+  }
+  .b-stats_bar.manga a.title::before {
+    border: 3px solid rgba(var(--manga-complete), 0.5);
+  }  
+  .b-stats_bar.anime a.title:hover::before {
+    border: 3px solid rgba(var(--hover-color), 0.9);
+    
+  }  
+  .b-stats_bar.manga a.title:hover::before {
+    border: 3px solid rgba(var(--manga-complete), 0.9);
+  }
+  .p-profiles .profile-head .c-brief .avatar img {
+    box-shadow: 0 2px 8px 1px rgba(var(--bright-color), 1);
+  }
+}
