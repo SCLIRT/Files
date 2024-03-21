@@ -1,0 +1,382 @@
+/* Основной файл */
+@import url("https://shiki-theme.web.app/stable/main.css");
+/* Стили обложки профиля */
+@import url("https://shiki-theme.web.app/stable/profile-cover.css");
+/* Полноэкранная обложка */
+@import url("https://shiki-theme.web.app/stable/immersive-cover.css");
+/* Шрифт Roboto */
+@import url("https://shiki-theme.web.app/stable/font-roboto.css");
+/* Материальные поля ввода */
+@import url("https://shiki-theme.web.app/stable/md-textfields.css");
+/* Изменения профиля #1 */
+@import url("https://shiki-theme.web.app/stable/profile-update_1.css");
+/* Изменения профиля #2 */
+@import url("https://shiki-theme.web.app/stable/profile-update_2.css");
+/* Изменения профиля #3 */
+@import url("https://shiki-theme.web.app/stable/profile-update_3.css");
+
+/* Настройки переменных темы */
+@media{:root {
+  /* Цвета текстов */
+  --color-text-primary: #aadaf2;
+  --color-text-secondary: #a8c5ce;
+  --color-text-hint: #d9bec5;
+  --color-text-disabled: #73939b;
+  --color-overlay-text-hovered: rgba(224, 226, 227, 0.04);
+  --color-overlay-text-selected: rgba(224, 226, 227, 0.08);
+  --color-overlay-text-pressed: rgba(224, 226, 227, 0.12);
+  /* Цвет ссылок */
+  --color-link: #78e6d9;
+  --color-link-hover: #e3366d;
+  --color-link-active: #c11b50;
+  /* Основной цвет */
+  --color-primary: #78e6d9;
+  --color-text-on-primary: #101e1c;
+  --color-primary-reduced: #5baea7;
+  --color-primary-hovered: #83e8dc;
+  --color-primary-pressed: #73ddd0;
+  --color-overlay-primary-hovered: rgba(120, 230, 217, 0.08);
+  --color-overlay-primary-selected: rgba(120, 230, 217, 0.12);
+  --color-overlay-primary-pressed: rgba(120, 230, 217, 0.16);
+  /* Акцентирующий цвет */
+  --color-accent: #e3366d;
+  --color-text-on-accent: #fbe5ec;
+  --color-accent-reduced: #a8305a;
+  --color-accent-fade: #752a49;
+  --color-overlay-accent-hovered: rgba(227, 54, 109, 0.08);
+  --color-overlay-accent-selected: rgba(227, 54, 109, 0.12);
+  --color-overlay-accent-pressed: rgba(227, 54, 109, 0.16);
+  /* Фоновые цвета */
+  --color-background: #101f28c0;
+  --color-background-translucent: rgba(16, 31, 40, 0.9);
+  --color-background-dialog: #172d3af0;
+  --color-surface: #1a2931;
+  --color-surface-hover: #2c3a41;
+  --color-surface-active: #35434a;
+  --color-border: #2d3a42;
+  /* Цвета верхнего меню */
+  --color-menu-background: #172d3a;
+  --color-menu-background-fade: rgba(23, 45, 58, 0.48);
+  --color-menu-text-primary: #e1e4e5;
+  --color-menu-text-disabled: #6f7d85;
+  --color-menu-icon: #c7cdd0;
+  --color-menu-search: #334652;
+  --color-menu-search-fade: rgba(225, 228, 229, 0.12);
+  --color-menu-background-hover: #2a3e4a;
+  --color-menu-background-active: #334652c0;
+  /* Цвета кнопок списков */
+  --color-planned: #315a6d;
+  --color-onhold: #3d484e;
+  --color-watching: #284b5c;
+  --color-rewatching: #284b5c;
+  --color-completed: #3c4f3d;
+  --color-dropped: #462b32;
+
+  /* Обложка профиля */
+  --user-cover: url("https://sun9-77.userapi.com/EgCnLx2qzJcZvEkuwRD8ICiVtqTOuq5e9GUxqA/00fbvpUoVOA.jpg");
+  /* Фон сайта */
+  --user-background: url("https://sun9-77.userapi.com/EgCnLx2qzJcZvEkuwRD8ICiVtqTOuq5e9GUxqA/00fbvpUoVOA.jpg");
+}}
+
+/* Моя обложка в профиле */
+.p-profiles .profile-head[data-user-id="537412"]::before {
+  display: block; /* Отображение обложки */
+  background-position: center 50%;
+}
+
+
+
+
+/* Правка высоты всплывающего меню */
+@media (min-width: 768px) { 
+.l-top_menu-v2 .active .submenu, .l-top_menu-v2 .submenu {
+    max-height: calc(50vh - 46px);
+  }
+}
+/* Навигация по верхнему меню */
+.l-top_menu-v2 .menu-icon:hover, .l-top_menu-v2 .menu-dropdown > span, .l-top_menu-v2 .menu-dropdown:hover > span, .l-top_menu-v2 .menu-icon.active, .l-top_menu-v2 .menu-icon:focus, .l-top_menu-v2 .menu-dropdown.active > span, .l-top_menu-v2 .menu-dropdown > span:focus, .l-top_menu-v2 .menu-dropdown > span a:hover, .l-top_menu-v2 .menu-dropdown > span a:active {
+    background-color: transparent;
+}
+.l-top_menu-v2 .menu-dropdown.main > span:not(.mobile), .l-top_menu-v2 .menu-icon, .l-top_menu-v2 .menu-dropdown.profile > span span, .l-top_menu-v2 .menu-dropdown .submenu-triangle::after, .l-top_menu-v2 .global-search .search-marker::before {
+    transition: 0.25s ease;
+    opacity: 0.8;
+}
+.l-top_menu-v2 .menu-dropdown.main > span:not(.mobile):hover, .l-top_menu-v2 .menu-dropdown.active > span:not(.mobile), .l-top_menu-v2 .menu-icon:hover, .l-top_menu-v2 .menu-dropdown.profile > span:hover span, .l-top_menu-v2 .menu-dropdown.profile.active > span span, .l-top_menu-v2 .menu-dropdown:hover .submenu-triangle::after, .l-top_menu-v2 .menu-dropdown.active .submenu-triangle::after, .l-top_menu-v2 .global-search:hover .search-marker::before {
+    opacity: 1;
+}
+/* Правка области для HOVER эффекта на мобильной версии */
+@media (min-width: 320px) and (max-width: 767px) {
+  .l-top_menu-v2 .menu-dropdown.profile > span a {
+    width: 44px;
+    justify-content: center;
+  }
+}
+/* HOVER аватарки */
+.l-top_menu-v2 .menu-dropdown.profile > span img {
+    box-shadow: 0 0 0 0 transparent;
+    transform: scale(1);
+    transition: 0.25s ease;
+}
+.l-top_menu-v2 .menu-dropdown.profile > span:hover img {
+    box-shadow: 0 0 0px 2px var(--color-primary);
+    filter: saturate(200%) opacity(0.8);
+    transform: scale(1);
+}
+/* Выпадающее меню с новыми эффектами */
+.l-top_menu-v2 .menu-dropdown .submenu {
+    visibility: hidden;
+    opacity: 0;
+    top: 60%;
+    transition: opacity .2s ease, top .2s linear, visibility .2s ease ;
+    pointer-events: none;
+}
+.l-top_menu-v2 .menu-dropdown.active:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+    pointer-events: auto;
+}
+.l-top_menu-v2 .submenu > a {
+    border-left: 0 solid var(--color-primary);
+}
+.l-top_menu-v2 .submenu > a:hover {
+    border-left: 4px solid var(--color-primary);
+    background: var(--color-overlay-primary-hovered);
+    transition: .2s ease;
+    color: inherit;
+}
+/* Анимация поиска */
+.l-top_menu-v2 .global-search .search-results {
+    animation: 0.34s fadeIn cubic-bezier(0.4, 0, 0.6, 1) !important;
+}
+/* На случай если нет уточнения этого вида ключевой анимации . Если есть - удалить */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* редизайн нового редактора */
+.b-shiki_editor-v2 .menubar {
+  background: transparent;
+}
+.b-shiki_editor-v2 .menu_group {
+  padding: 8px 0;
+}
+.b-shiki_editor-v2 .menu_group-controls {
+  padding: 12px 0;
+}
+.ProseMirror {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: inherit;
+  border-width: 0 0 2px;
+  font-size: 1rem;
+  min-height: calc(2.5em + 2px) !important;
+}
+.ProseMirror:not(textarea) {
+  padding: 4px 0;
+}
+.ProseMirror:focus {
+  border-color: var(--color-primary);
+}
+textarea.ProseMirror {
+  background-color: var(--color-background-dialog);
+  border-width: 1px;
+  border-radius: 3px;
+  max-height: 530px !important;
+  overflow: auto !important;
+}
+.b-shiki_editor-v2 .icon:not(.is-disabled) {
+  color: var(--color-text-hint);
+  transition: 0.16s cubic-bezier(0.4, 0, 0.6, 1);
+}
+.b-shiki_editor-v2 .icon.is-disabled {
+  color: var(--color-text-disabled);
+}
+.b-shiki_editor-v2 .icon.is-button {
+  padding: 0 10px;
+  height: 24px;
+}
+.item-mobile:hover, .buttons .editor-controls .b-tooltipped:hover, header.head h1 a.back:hover, header.head h2 a.back:hover, .subheadline-buttons .item-edit:hover, .profile-actions > a:hover, .b-collection-filters .mylist-block .item-sign:hover, .b-collection_item .delete:hover, .b-collection_item .drag-handle:hover, .b-image .delete:hover, .b-image .confirm:hover, .b-image .cancel:hover, .b-image .mobile-edit:hover, .b-list_switchers .switcher:hover, .b-subposter-action:hover, .b-user_rate .rate-show .rate-number .item-add:hover, .p-animes_collection-index .pagination .link:hover, .p-recommendations-index .pagination .link:hover, .p-dashboards-show .v2 .headline .buttons .options:hover, .p-dialogs .misc-links > a:hover, .p-profiles-show .about .item-edit:hover, .b-stats_bar .compatibility a:hover[href*="/similar/"], .b-stats_bar .compatibility .text:hover:first-child, .p-messages .mass-actions .action a:hover, .p-profiles-favorites .item-back:hover, .p-user_rates-index .list-lines tr.edit-form .remove:hover, .p-user_rates-index .list-posters .user_rate .edit-user_rate:hover {
+  color: var(--color-primary) !important;
+}
+.b-shiki_editor-v2 .icon:not(.is-disabled):hover {
+  background-color: var(--color-overlay-text-hovered);
+  color: var(--color-primary);
+}  
+.b-shiki_editor-v2 .icon.is-active.is-button, .b-shiki_editor-v2 .icon.is-active {
+  color: var(--color-text-on-primary) !important;
+  background-color: var(--color-accent) !important;
+}
+.b-shiki_editor-v2 .icon {
+  height: 32px;
+  width: 32px;
+  font-size: 18px;
+  padding: 7px;
+  line-height: 1;
+}
+.shiki-file_uploader-upload_progress .bar {
+  background-color: #d9baf6;
+  color: #1d172b;
+}
+.shiki-file_uploader-upload_progress::before {
+  color: #ddf5ff;
+}
+.b-shiki_editor-v2 footer {
+  margin-top: .25em;
+}
+
+/* редизпйн панели смайликов нового редактора */
+.b-shiki_editor-v2 .popup-content {
+    background: var(--color-background-dialog);
+    inset: -18.2rem auto auto 0px !important;
+    height: 246px !important;
+    min-height: unset !important;
+    width: 375px !important;
+}
+.b-shiki_editor-v2 .b-tip--large[data-popper-placement^="bottom"] > [data-popper-arrow] {
+    top: 15rem;
+}
+.b-shiki_editor-v2 .b-tip > [data-popper-arrow]::before {
+    background: var(--color-background-dialog);
+}
+.b-shiki_editor-v2 .smiley {
+    height: 50px;
+}
+.b-image .marker .marker-text {
+  display: inline-block;
+}
+
+/* свечение аватарки профиля */
+.p-profiles .profile-head .c-brief .avatar img {
+  box-shadow: 0 2px 8px 1px var(--color-primary-reduced);
+}
+/* правка верхнего меню */
+@media (min-width: 960px) {
+.l-top_menu-v2 {
+    border-radius: 0px 0px 11px 40px;
+    background-color: var(--color-background) !important;
+    background-image: linear-gradient(var(--color-background-dialog), transparent) !important;
+}
+#profiles_show .b-to-top::before {
+    content: none;
+}
+}
+.l-top_menu-v2 .logo-container::after {
+  content: 'SHIKIMORI';
+  opacity: 0.8;
+  transition: 0.16s cubic-bezier(0.4, 0, 0.6, 1);
+}
+.l-top_menu-v2 .logo-container:hover::after {
+  opacity: 1;
+}
+.l-top_menu-v2.is-search-focus .global-search input, .l-top_menu-v2.is-search-mobile .global-search input {
+  color: inherit;
+  background: rgba(214, 237, 250, 0.3);
+}
+.l-top_menu-v2.is-search-focus .global-search .search-marker, .l-top_menu-v2.is-search-mobile .global-search .search-marker {
+  color: inherit !important;
+}
+
+
+
+
+
+/*** Экспериментальное ***/
+/* Скролбар */
+html, div, code {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background-dialog);
+}
+/* Редизайн кнопки свернуть/развернуть */
+.b-edit_styles .edit_style .style_css label, .b-edit_styles .new_style .style_css label {
+    background: #797aa6;
+    border-radius: 2px 2px 0 0;
+    padding: 4px 10px;
+    color: #fafafa;
+    margin-top: 4px; /* возможно придётся настраивать вручную, что бы добиться эффекта единного интерфейса */
+}
+.b-edit_styles .edit_style .style_css .editor-expand, .b-edit_styles .edit_style .style_css .editor-collapse {
+    color: #ddf5ff ;
+    background: #0009;
+    border-radius: 2px;
+    text-transform: uppercase;
+    min-width: 5.5rem;
+    font-size: .875rem !important;
+    padding: 6px 10px;
+    font-weight: 700 !important;
+    border: none;
+}
+.b-edit_styles .edit_style .style_css .editor-collapse:hover, .b-edit_styles .edit_style .style_css .editor-expand:hover {
+    color: #d9baf6;
+    transition: 0.16s cubic-bezier(0.4, 0, 0.6, 1);
+}
+/* CSS Редактор */
+.cm-s-solarized.cm-s-light {
+    background-color: #282638;
+    color: #fff;
+    text-shadow: none;
+}
+.b-edit_styles .edit_style .style_css .CodeMirror, .b-edit_styles .new_style .style_css .CodeMirror {
+    border: none !important;
+}
+.cm-s-solarized.cm-s-light .CodeMirror-linenumber {
+    color: #858396;
+}
+.cm-searching {
+    background-color: #fafafa30;
+}
+.CodeMirror-search-field {
+    width: 400px !important;
+    background: #0009 !important;
+    color: #fff !important;
+}
+.cm-s-solarized.cm-s-light div.CodeMirror-selected {
+    background: #44424a90;
+}
+.cm-s-solarized .cm-builtin {
+  color: #FAD430;
+}
+.cm-s-solarized .cm-def {
+  color: #fcc28c;
+}
+.cm-s-solarized .cm-string {
+  color: #C3E88D;
+}
+.cm-s-solarized .cm-variable-2 {
+  color: #9d9efe;
+}
+.cm-s-solarized .cm-variable-3 {
+  color: #C792EA;
+}
+.cm-s-solarized .cm-number {
+  color: #94FCA0;
+}
+.cm-s-solarized.cm-s-light .CodeMirror-gutters {
+  background-color: #36334d;
+}
+.cm-s-solarized .cm-property {
+  color: #80CBC4;
+}
+.cm-s-solarized .cm-variable {
+  color: #89DDFF;
+}
+.cm-s-solarized .cm-tag {
+  color: #FF5370;
+}
+.cm-s-solarized .cm-atom {
+  color: #F77669;
+}
+.cm-s-solarized .cm-keyword {
+  color: #C792EA;
+}
+.cm-s-solarized .cm-comment {
+  color: #5C7E8C;
+}
+.cm-s-solarized .cm-qualifier {
+  color: #FFCB6B;
+}
